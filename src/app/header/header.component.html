@@ -1,0 +1,29 @@
+<mat-toolbar color="white">
+  <span>
+    <a routerLink="/">
+      <img src="../../../assets/images/logo.png" alt="Angular" />
+      NgWall
+    </a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-stroked-button"
+        >New Advert</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/login" routerLinkActive="mat-stroked-button"
+        >Login</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/signup" routerLinkActive="mat-stroked-button"
+        >Sign up</a
+      >
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button (click)="onLogout()" mat-button>Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>
